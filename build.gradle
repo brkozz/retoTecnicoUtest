@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.89")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+group 'pruebaAutomatizacionBancolombia'
+version '1.0-SNAPSHOT'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'net.serenity-bdd.aggregator'
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'net.serenity-bdd', name: 'serenity-core', version: '2.0.89'
+    compile group: 'net.serenity-bdd', name: 'serenity-junit', version: '2.0.89'
+    compile group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '1.9.48'
+    compile group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '2.0.89'
+    compile group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '2.0.89'
+    testImplementation 'org.assertj:assertj-core:3.12.2'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.29'
+}
+gradle.startParameter.continueOnFailure = true
